@@ -1,0 +1,26 @@
+{
+  "name": "pacman-game",
+  "version": "1.0.0",
+  "description": "small fun game",
+  "main": "pacman.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "mocha tests/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chazie9/pacman-game.git"
+  },
+  "author": "Chas Harring",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chazie9/pacman-game/issues"
+  },
+  "homepage": "https://github.com/Chazie9/pacman-game#readme",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0"
+  }
+}

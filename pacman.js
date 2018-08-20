@@ -15,7 +15,38 @@
  *      1. array containing the final x position of Pacman, final y position of Pacman, and total number of 
  *         coins collected in that order (ie. [finalXPos, finalYPos, coinsCollected])
  */
+
+var fs = require('fs');
+const ParseGameData = require('./helperFunctions/parseGameData.js');
+const FollowPath = require('./helperFunctions/followPath.js');
+const MakeBoard = require('./helperFunctions/makeBoard.js');
+var inputFile = './tests/input.txt';
+
 function pacman(inputFile) {
     // Start writing your code here
+    let gameInput = fs.readFileSync(inputFile).toString();
+    let parsedGameData = ParseGameData.parseGameData(gameInput);
+
+    if(!parsedGameData){
+        console.log('data no good', [-1, -1, 0])
+        return [-1, -1, 0]
+    }
+    if(parsedGameData.board.area > 1000000 )  {
+        return 'Woah please upgrade features to compute a board that big';
+    }
+
+    // make a new game board
+    // board includes wall and coin locations
+    let board = MakeBoard.setBoard(parsedGameData);
+    let game = FollowPath.movePacman(parsedGameData, board);
+
+    //return resutls of the game
+    let finalXPos = game.finalXPos
+    let finalYPos = game.finalYPos
+    let coinsCollected = game.coins
+
+    //console.log('final score!', finalXPos, finalYPos, coinsCollected)
 	return [finalXPos, finalYPos, coinsCollected];
 }
+return pacman(inputFile);
+

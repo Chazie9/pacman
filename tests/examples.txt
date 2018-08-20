@@ -1,0 +1,30 @@
+example 1
+Answer - [1, 4, 7]
+5 5
+1 2
+NNESEESWNWW
+1 0
+2 2
+2 3
+
+
+
+
+example 2
+Answer - [1, 5, 7]
+6 6
+1 2
+NNESENSWNWN
+1 0
+2 2
+2 3
+
+
+example3
+Answer - [330 343 5]
+800 800
+330 345
+NSSESW
+331 355
+330 353
+329 343
